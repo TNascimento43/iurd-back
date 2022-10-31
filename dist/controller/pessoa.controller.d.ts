@@ -1,4 +1,5 @@
+import { Logger } from "@nestjs/common";
 export declare class PessoaController {
-    logger: any;
+    logger: Logger;
     getAll(): Promise<String>;
 }
