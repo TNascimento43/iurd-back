@@ -1,11 +1,14 @@
 import {Module} from '@nestjs/common';
 import {PessoaController} from "../controller/pessoa.controller";
+import {TypeOrmModule} from "@nestjs/typeorm";
+import {PessoaRepository} from "../repositories/pessoa.repository";
+import {PessoaService} from "../services/pessoa.service";
 
 @Module({
-    imports: [],
+    imports: [TypeOrmModule.forFeature([PessoaRepository])],
     controllers: [PessoaController],
-    providers: [],
-    exports: []
+    providers: [PessoaService],
+    exports: [PessoaService]
 })
 export class PessoaModule {
 }
