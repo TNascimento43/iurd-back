@@ -13,11 +13,14 @@ const app_service_1 = require("./app.service");
 const pessoa_module_1 = require("./module/pessoa.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_config_1 = require("./config/typeorm.config");
+const tipo_reuniao_module_1 = require("./module/tipo-reuniao.module");
+const reuniao_module_1 = require("./module/reuniao.module");
+const reuniao_pessoa_module_1 = require("./module/reuniao-pessoa.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [pessoa_module_1.PessoaModule, typeorm_1.TypeOrmModule.forRoot(typeorm_config_1.typeOrmConfig)],
+        imports: [pessoa_module_1.PessoaModule, tipo_reuniao_module_1.TipoReuniaoModule, reuniao_module_1.ReuniaoModule, reuniao_pessoa_module_1.ReuniaoPessoaModule, typeorm_1.TypeOrmModule.forRoot(typeorm_config_1.typeOrmConfig)],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

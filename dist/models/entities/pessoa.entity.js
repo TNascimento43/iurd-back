@@ -16,7 +16,7 @@ let Pessoa = class Pessoa extends typeorm_1.BaseEntity {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)('increment'),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], Pessoa.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({ name: 'nome', nullable: false, type: 'varchar', length: 255 }),

@@ -4,9 +4,12 @@ import { AppService } from './app.service';
 import {PessoaModule} from "./module/pessoa.module";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {typeOrmConfig} from "./config/typeorm.config";
+import {TipoReuniaoModule} from "./module/tipo-reuniao.module";
+import {ReuniaoModule} from "./module/reuniao.module";
+import {ReuniaoPessoaModule} from "./module/reuniao-pessoa.module";
 
 @Module({
-  imports: [PessoaModule, TypeOrmModule.forRoot(typeOrmConfig)],
+  imports: [PessoaModule, TipoReuniaoModule, ReuniaoModule, ReuniaoPessoaModule, TypeOrmModule.forRoot(typeOrmConfig)],
   controllers: [AppController],
   providers: [AppService],
 })

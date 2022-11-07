@@ -1,7 +1,7 @@
 import { BaseEntity } from 'typeorm';
 import { TituloEnum } from "../enums/titulo.enum";
 export declare class Pessoa extends BaseEntity {
-    id: string;
+    id: number;
     nome: string;
     email: string;
     telefone: string;

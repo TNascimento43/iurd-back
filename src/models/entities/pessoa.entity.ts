@@ -6,7 +6,7 @@ import {TituloEnum} from "../enums/titulo.enum";
 export class Pessoa extends BaseEntity {
 
     @PrimaryGeneratedColumn('increment')
-    id: string;
+    id: number;
 
     @Column({ name: 'nome', nullable: false, type: 'varchar', length: 255 })
     nome: string;
