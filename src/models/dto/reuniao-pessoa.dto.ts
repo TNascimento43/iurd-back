@@ -5,6 +5,7 @@ export class ReuniaoPessoaDto {
     id: number;
     reuniaoId: number;
     pessoaId: number;
+    dataReuniao: Date;
     justificativa: string;
     status: StatusPresencaEnum;
 

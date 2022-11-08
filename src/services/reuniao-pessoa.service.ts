@@ -60,6 +60,24 @@ export class ReuniaoPessoaService {
         return res;
     }
 
+    async porData(mes: number, ano: number): Promise<ReuniaoPessoaDto[]> {
+        const inicio = new Date(ano, mes - 1, 1);
+        const fim = new Date(ano, mes, 0);
+        const chamada = await this.repository.porData(mes, ano, inicio.getDate(), fim.getDate());
+        let res: ReuniaoPessoaDto[] = [];
+        if (chamada.length < 1) {
+            return res;
+        }
+        chamada.forEach(it => {
+            let reuniaoPessoa = new ReuniaoPessoaDto(it);
+            reuniaoPessoa.reuniaoId = it.reuniaoId;
+            reuniaoPessoa.pessoaId = it.pessoaId;
+            reuniaoPessoa.dataReuniao = it.dataReuniao
+            res.push(reuniaoPessoa)
+        });
+        return res;
+    }
+
     private async findByFields(options: FindOneOptions<ReuniaoPessoa>): Promise<ReuniaoPessoa[] | undefined> {
         options.relations = ['pessoa', 'reuniao'];
         return await this.repository.find(options);
