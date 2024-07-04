@@ -2,7 +2,6 @@ import {BaseEntity, Entity, Unique, PrimaryGeneratedColumn, Column, CreateDateCo
 import {TituloEnum} from "../enums/titulo.enum";
 
 @Entity()
-@Unique(['email'])
 export class Pessoa extends BaseEntity {
 
     @PrimaryGeneratedColumn('increment')
